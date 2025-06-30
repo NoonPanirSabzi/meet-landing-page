@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+}
+
+/* HEADER LAYOUT */
+.logo {
+  display: block;
+  margin-inline: auto;
+  margin-block: 3rem clamp(3.375rem, 8.34vw, 4rem);
+}
+
+.header {
+  display: grid;
+  overflow-x: hidden;
+  grid-template-columns: 1fr minmax(0px, calc(100vw - 788px)) 1fr;
+  row-gap: clamp(3rem, 9.375vw, 4.5rem);
+  margin-block-end: 4rem;
+}
+
+.header img {
+  max-inline-size: 100%;
+}
+
+.header__left-img {
+  margin-left: -7%;
+}
+
+.header__right-img {
+  margin-left: 7%;
+}
+
+.hidden-space {
+  display: hidden;
+}
+
+.header__content {
+  padding-inline: 1.5rem;
+  margin-inline: auto;
+  grid-column: 1/ 4;
+}
+
+h1 {
+  margin-block: 0 1.5rem;
+}
+
+.header__content p {
+  margin-block: 0 2rem;
+}
+
+.header__content button {
+  display: block;
+  margin-inline: auto;
+}
+
+.header__download-button {
+  margin-block-end: 1rem;
+}
+
+/* MAIN LAYOUT */
