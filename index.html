@@ -11,6 +11,12 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Meet landing page</title>
   </head>
@@ -41,10 +47,12 @@
             Meet makes it easy to connect with others face-to-face virtually and
             collaborate across any device.
           </p>
-          <button type="button" class="header__download-button">
-            Download <span>v1.3</span>
+          <button type="button" class="download-button bg-main">
+            Download <span class="main-light">v1.3</span>
           </button>
-          <button type="button">What is it?</button>
+          <button type="button" class="info-button bg-secondary">
+            What is it?
+          </button>
         </section>
       </div>
     </header>
@@ -54,13 +62,22 @@
         <div class="counter__circle"><span>01</span></div>
       </div>
       <section class="images">
-        <img src="assets/desktop/image-woman-in-videocall.jpg" alt="woman videocall" />
-        <img src="assets/desktop/image-women-videochatting.jpg" alt="woman videocaht" />
-        <img src="assets/desktop/image-men-in-meeting.jpg" alt="man in meeting" />
+        <img
+          src="assets/desktop/image-woman-in-videocall.jpg"
+          alt="woman videocall"
+        />
+        <img
+          src="assets/desktop/image-women-videochatting.jpg"
+          alt="woman videocaht"
+        />
+        <img
+          src="assets/desktop/image-men-in-meeting.jpg"
+          alt="man in meeting"
+        />
         <img src="assets/desktop/image-man-texting.jpg" alt="man texting" />
       </section>
       <section class="content">
-        <p>Built for modern use</p>
+        <span class="overline">BUILT FOR MODERN USE</span>
         <h2>Smarter meetings, all in one place</h2>
         <p>
           Send messages, share files, show your screen, and record your meetings
@@ -79,8 +96,8 @@
         Stay connected with reliable HD meetings and unlimited one-on-one and
         group video sessions.
       </p>
-      <button type="button" class="download-button-footer">
-        Download <span>v1.3</span>
+      <button type="button" class="download-button bg-secondary">
+        Download <span class="secondary-light">v1.3</span>
       </button>
     </footer>
   </body>

@@ -1,3 +1,14 @@
+:root {
+  /* colors */
+  --main: #4d96a9;
+  --main-light: #8fe3f9;
+  --secondary: #855fb1;
+  --secondary-light: #d9b8ff;
+  --txt-dark: #28283d;
+  --txt-light: #87879d;
+  --bg: #fafafa;
+}
+
 body {
   margin: 0;
 }
@@ -36,6 +47,7 @@ body {
 .header__content {
   padding-inline: 1.5rem;
   margin-inline: auto;
+  text-align: center;
   grid-column: 1 / 4;
 }
 
@@ -48,11 +60,23 @@ h1 {
 }
 
 button {
+  all: unset;
   display: block;
   margin-inline: auto;
+  border-radius: 1.8125rem;
 }
 
-.header__download-button {
+.download-button {
+  padding-block: 1rem;
+  padding-inline: 2.5rem;
+}
+
+.info-button {
+  padding-block: 1rem;
+  padding-inline: 1.8125rem;
+}
+
+header .download-button {
   margin-block-end: 1rem;
 }
 
@@ -98,6 +122,7 @@ button {
 
 .content {
   text-align: center;
+  padding-inline: 1.5rem;
 }
 
 .content p {
@@ -120,8 +145,10 @@ main {
 }
 
 .counter.second-counter {
-  /* absolute positions takes the element out of normal flow*/
+  /* absolute positions takes the element out of normal flow
+  z-index more than default (0) makes sure the element is on top of footer*/
   position: absolute;
+  z-index: 2;
   /* we shift the element 50% of it's container width to the right, then
   we shift the element 50% of it's own width to the left, the result is
   it becomes center of the width */
@@ -134,8 +161,6 @@ main {
 
 footer {
   position: relative;
-  /* setting footer z-index lower than 0 (default) makes sure the counter element overlaps it */
-  z-index: -1;
   padding-inline: 1.5rem;
   padding-block: 5.75rem 4.5rem;
   background: linear-gradient(
@@ -152,4 +177,93 @@ footer > h2 {
 
 footer > p {
   margin-block: 1.5rem 2rem;
+}
+
+/* Font and Colors */
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--bg);
+}
+
+h1,
+h2,
+.overline,
+.counter__circle,
+button {
+  font-weight: 900;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6.25vw, 4rem);
+  line-height: clamp(2.75rem, 6.25vw, 4rem);
+  color: var(--txt-dark);
+}
+
+p {
+  font-weight: 500;
+  line-height: 1.625rem;
+}
+
+header p,
+main p {
+  font-size: 1rem;
+  color: var(--txt-light);
+}
+
+button {
+  color: white;
+}
+.bg-main {
+  background-color: var(--main);
+}
+
+.bg-main:hover {
+  background-color: rgba(113, 192, 212, 1);
+  cursor: pointer;
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-secondary:hover {
+  background-color: rgba(177, 139, 221, 1);
+  cursor: pointer;
+}
+
+.main-light {
+  color: var(--main-light);
+}
+
+.secondary-light {
+  color: var(--secondary-light);
+}
+
+.counter__circle {
+  color: var(--txt-light);
+  background-color: var(--bg);
+}
+
+.overline {
+  font-size: 1rem;
+  line-height: 1.625rem;
+  letter-spacing: 0.25rem;
+  color: var(--main);
+}
+
+h2 {
+  color: var(--txt-dark);
+  font-size: clamp(2rem, 5.3vw, 2.5rem);
+  line-height: clamp(2.25rem, 5.3vw, 2.75rem);
+}
+
+footer p {
+  font-size: 1.125rem;
+}
+
+footer h2,
+footer p {
+  color: var(--bg);
 }
