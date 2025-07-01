@@ -36,7 +36,7 @@ body {
 .header__content {
   padding-inline: 1.5rem;
   margin-inline: auto;
-  grid-column: 1/ 4;
+  grid-column: 1 / 4;
 }
 
 h1 {
@@ -47,7 +47,7 @@ h1 {
   margin-block: 0 2rem;
 }
 
-.header__content button {
+button {
   display: block;
   margin-inline: auto;
 }
@@ -57,3 +57,99 @@ h1 {
 }
 
 /* MAIN LAYOUT */
+.counter {
+  margin-inline: auto;
+  max-inline-size: fit-content;
+}
+
+.counter__vertical-bar {
+  inline-size: 0.0625rem;
+  block-size: 5.25rem;
+  background-color: rgba(135, 135, 157, 0.25);
+  margin-inline: auto;
+}
+
+.counter__circle {
+  border: 0.0625rem solid rgba(135, 135, 157, 0.25);
+  border-radius: 50%;
+  inline-size: 3.5rem;
+  block-size: 3.5rem;
+  line-height: 3.5rem;
+  text-align: center;
+}
+
+.counter__circle > span {
+  display: block;
+  transform: translate(1px);
+}
+
+.images {
+  margin-block: 4rem;
+  padding-inline: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-flow: row wrap;
+}
+
+.images > img {
+  border-radius: 0.5rem;
+  inline-size: calc((100vw - 4.5rem) / 2);
+}
+
+.content {
+  text-align: center;
+}
+
+.content p {
+  margin-block: 0;
+}
+
+.content > h2 {
+  margin-block: 1.5rem 2rem;
+}
+
+/* FOOTER LAYOUT */
+
+main {
+  /* we make main, relative, to position .second-counter relative to it */
+  position: relative;
+  /* amount of padding-bottom is calculated like this
+  = space between beforehand element and the counter + height of counter - the height amount of counter circle that is overlapping bottom
+  = 4rem + 8.75rem - 1.75 = 11*/
+  padding-bottom: 11rem;
+}
+
+.counter.second-counter {
+  /* absolute positions takes the element out of normal flow*/
+  position: absolute;
+  /* we shift the element 50% of it's container width to the right, then
+  we shift the element 50% of it's own width to the left, the result is
+  it becomes center of the width */
+  left: 50%;
+  transform: translateX(-50%);
+  /* 1.75rem is 50% of height of counter__circle, that we want to shift bottom overlap on footer
+  negative sign shifts it bottom instead of top */
+  bottom: -1.75rem;
+}
+
+footer {
+  position: relative;
+  /* setting footer z-index lower than 0 (default) makes sure the counter element overlaps it */
+  z-index: -1;
+  padding-inline: 1.5rem;
+  padding-block: 5.75rem 4.5rem;
+  background: linear-gradient(
+      rgba(77, 150, 169, 0.8955),
+      rgba(77, 150, 169, 0.8955)
+    ),
+    url("/assets/mobile/image-footer.jpg") center/cover no-repeat;
+  text-align: center;
+}
+
+footer > h2 {
+  margin-block: 0;
+}
+
+footer > p {
+  margin-block: 1.5rem 2rem;
+}
