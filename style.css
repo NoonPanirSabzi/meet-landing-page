@@ -23,6 +23,8 @@ body {
 .header {
   display: grid;
   overflow-x: hidden;
+  /* the middle element makes invisible spacce as the screen width grows between side 
+  elements when side elements reach their maximum width */
   grid-template-columns: 1fr minmax(0px, calc(100vw - 788px)) 1fr;
   row-gap: clamp(3rem, 9.375vw, 4.5rem);
   margin-block-end: 4rem;
@@ -319,6 +321,8 @@ button {
 /* 69rem = 1104px assuming 1rem = 16px*/
 @media (min-width: 69rem) {
   .header {
+    /* 0px width belongs to the .hidden-space element that was previously used as a trick
+    now we want it to not be in the layout to we give it a 0px width */
     grid-template-columns: 394px 1fr 0px 394px;
     row-gap: 0;
     margin-block-end: 7rem;
