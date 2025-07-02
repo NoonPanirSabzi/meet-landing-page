@@ -116,14 +116,14 @@ header .download-button {
   margin-inline: auto;
   max-inline-size: fit-content;
   padding-inline: 1.5rem;
-  display: flex;
-  gap: clamp(0.625rem, 2.7vw, 2rem);
-  flex-flow: row wrap;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .images > img {
   border-radius: 0.5rem;
-  inline-size: calc((96.8vw - 3rem) / 2);
+  inline-size: 100%;
   max-inline-size: 16rem;
 }
 
@@ -302,8 +302,8 @@ button {
     margin-inline-end: 1rem;
   }
 
-  .images > img {
-    inline-size: calc((100vw - 9rem) / 4);
+  .images {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   footer {
